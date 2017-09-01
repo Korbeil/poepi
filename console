@@ -1,0 +1,21 @@
+#!/usr/bin/php
+<?php
+/**
+ * Created by PhpStorm.
+ * User: bleduc
+ * Date: 30/08/17
+ * Time: 21:27
+ */
+
+    if (!$loader = include __DIR__.'/vendor/autoload.php') {
+        die('You must set up the project dependencies.');
+    }
+
+    $characters             = \App\Poe\Api\GetCharacters::request([
+            'account'       => 'dobel'
+    ]);
+    var_dump($characters);
+    exit;
+
+    $app    = new \App\Application();
+    $app->run();
